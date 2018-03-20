@@ -27,7 +27,7 @@ app.use('/graphql', cors(), bodyParser.json(), graphqlExpress({
 }));
 
 const engine = new ApolloEngine({
-  apiKey: 'service:silas-ss-1884:mFUeBSZcMRnRcxBBLDvTlQ'
+  apiKey: 'API_KEY'
 });
 
 engine.listen({
