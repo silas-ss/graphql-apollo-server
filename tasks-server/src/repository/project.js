@@ -23,7 +23,11 @@ const repository = {
     return db.getPool().query("SELECT MAX(id) FROM tasks.project")
       .then((res) => {
         const lastId = parseInt(res.rows[0].max)
-        const newId = lastId + 1;
+        let newId = 1
+        if (!isNaN(lastId)) {
+          newId = lastId + 1;
+        }
+        
         return db.getPool().query("INSERT INTO tasks.project(id, name) VALUES($1, $2)", [newId, name])
           .then((data) => {
             return { id: newId, name }
