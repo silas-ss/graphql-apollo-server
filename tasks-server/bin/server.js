@@ -7,27 +7,21 @@ const { ApolloEngine } = require('apollo-engine');
 const cors = require('cors');
 
 const typeDefs = require('../src/typedefs');
-const query = require('../src/query');
-const mutation = require('../src/mutation');
+const resolvers = require('../src/resolvers');
 
-const resolvers = {
-  Query: query,
-  Mutation: mutation
-};
 
-const schema = makeExecutableSchema({
-  typeDefs,
-  resolvers
-});
+const schema = makeExecutableSchema({ typeDefs, resolvers });
 
-app.use('/graphql', cors(), bodyParser.json(), graphqlExpress({ 
+app.use(cors());
+
+app.use('/graphql', bodyParser.json(), graphqlExpress({ 
   schema,
   tracing: true,
   cacheControl: true
 }));
 
 const engine = new ApolloEngine({
-  apiKey: 'API_KEY'
+  apiKey: 'ENGINE_API_KEY'
 });
 
 engine.listen({

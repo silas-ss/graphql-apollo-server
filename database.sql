@@ -1,12 +1,14 @@
--- Table: tasks.project
+-- Table: public.projects
 
--- DROP TABLE tasks.project;
+-- DROP TABLE public.projects;
 
-CREATE TABLE tasks.project
+CREATE TABLE public.projects
 (
-  id bigint NOT NULL,
+  id character varying(255) NOT NULL,
   name character varying(255),
-  CONSTRAINT project_pkey PRIMARY KEY (id)
+  "createdAt" timestamp without time zone,
+  "updatedAt" timestamp without time zone,
+  CONSTRAINT projects_pkey PRIMARY KEY (id)
 )
 WITH (
   OIDS=FALSE

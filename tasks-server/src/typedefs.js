@@ -6,19 +6,24 @@ const typeDefs = `
 
   type Mutation {
   	newProject(name: String!): Project!
-  	deleteProject(id: Int!): Int!
+  	deleteProject(id: String!): String!
   	updateProject(project: ProjectInput!): Project!
   }
 
 	type Project @cacheControl(maxAge: 10){
-  	id: ID!
+  	id: String!
   	name: String!
   }
 
   input ProjectInput {
-  	id: ID!
+  	id: String!
   	name: String!
   }
-`
 
-module.exports = typeDefs
+  type Schema {
+    query: Query
+    mutation: Mutation
+  }
+`;
+
+module.exports = typeDefs;
