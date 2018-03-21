@@ -34,7 +34,7 @@ export const MUTATION_CREATE_PROJECT = gql`
 `
 
 export const MUTATION_DELETE_PROJECT = gql`
-  mutation ($id: Int!) {
+  mutation ($id: String!) {
     deleteProject(id: $id)
   }
 `
