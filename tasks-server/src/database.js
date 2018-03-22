@@ -13,9 +13,9 @@ const sequelize = new Sequelize('research', 'postgres', 'postgres', {
   operatorsAliases: false
 });
 
-const mysql = new Sequelize('research', 'postgres', 'postgres', {
+const mysql = new Sequelize('tasks', 'root', 'toor', {
   host: 'localhost',
-  dialect: 'postgres',
+  dialect: 'mysql',
   pool: {
     max: 5,
     min: 0,
