@@ -12,6 +12,7 @@
     "graphql": "^0.13.2",
     "graphql-tools": "^2.23.1",
     "graphql-tools-types": "^1.1.14",
+    "mongoose": "^5.0.11",
     "pg": "^7.4.1",
     "sequelize": "^4.37.3",
     "uuid-v4": "^0.1.0"
