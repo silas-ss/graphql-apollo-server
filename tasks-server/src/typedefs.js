@@ -24,6 +24,7 @@ const typeDefs = `
 	type Project @cacheControl(maxAge: 10){
   	id: String!
   	name: String!
+    tasks: [Task]!
   }
 
   input ProjectInput {
@@ -36,6 +37,7 @@ const typeDefs = `
     title: String!
     description: String!
     projectId: String!
+    worklogs: [Worklog]!
   }
 
   input TaskInput {

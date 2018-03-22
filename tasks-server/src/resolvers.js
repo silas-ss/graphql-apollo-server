@@ -56,6 +56,16 @@ const resolvers = {
       Worklog.update(worklog, { where: { id: worklog.id } });
       return worklog;
     }
+  },
+  Project: {
+    tasks (project) {
+      return Task.findAll({ where: { projectId: project.id }});
+    }
+  },
+  Task: {
+    worklogs (task) {
+      return Worklog.find({ taskId: task.id });
+    }
   }
 };
 
