@@ -49,11 +49,11 @@ const resolvers = {
       return newWorklog;
     },
     deleteWorklog (_, { id }) {
-      Worklog.destroy({ where: { id } });
+      Worklog.remove({ id });
       return id;
     },
     updateWorklog (_, { worklog }) {
-      Worklog.update(worklog, { where: { id: worklog.id } });
+      Worklog.update({ id: worklog.id }, worklog, { upsert: true });
       return worklog;
     }
   },
