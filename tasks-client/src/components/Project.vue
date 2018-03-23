@@ -161,10 +161,9 @@ export default {
           data.findAllProjects.push(newProject)
           store.writeQuery({ query: PROJECTS_QUERY, data })
         }
+      }).then(() => {
+        self.modalCreate = false
       })
-        .then((data) => {
-          console.log(data)
-        })
     },
 
     edit (p) {

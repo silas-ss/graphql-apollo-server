@@ -27,6 +27,7 @@
       <strong>Description</strong>: {{ task.description }}<br>
       <h5>Worklogs</h5>
 
+      <worklog-list :task-id="taskId"></worklog-list>
     </div>
   </q-layout>
 </template>
@@ -50,6 +51,8 @@ import {
   QPopover
 } from 'quasar'
 
+import WorklogList from './WorklogList'
+
 let self
 
 export default {
@@ -69,8 +72,16 @@ export default {
     QModal,
     QModalLayout,
     QInput,
-    QPopover
+    QPopover,
+    WorklogList
   },
+
+  computed: {
+    taskId () {
+      return self.task.id
+    }
+  },
+
   data () {
     self = this
     return {
@@ -80,9 +91,7 @@ export default {
 
   methods: {},
 
-  created () {},
-
-  mounted () {
+  created () {
     self.task = self.$route.params.task
   }
 }

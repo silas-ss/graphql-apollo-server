@@ -15,7 +15,7 @@ import Quasar from 'quasar'
 import router from './router'
 import { ApolloClient } from 'apollo-client'
 import { HttpLink } from 'apollo-link-http'
-import { Hermes } from 'apollo-cache-hermes'
+import { InMemoryCache } from 'apollo-cache-inmemory'
 import VueApollo from 'vue-apollo'
 
 Vue.config.productionTip = false
@@ -35,7 +35,7 @@ const httpLink = new HttpLink({
 
 const apolloClient = new ApolloClient({
   link: httpLink,
-  cache: new Hermes(),
+  cache: new InMemoryCache(),
   connectToDevTools: true
 })
 

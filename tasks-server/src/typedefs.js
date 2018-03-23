@@ -21,7 +21,7 @@ const typeDefs = `
     updateWorklog(worklog: WorklogInput): Worklog!
   }
 
-	type Project @cacheControl(maxAge: 10){
+	type Project {
   	id: String!
   	name: String!
     tasks: [Task]!
