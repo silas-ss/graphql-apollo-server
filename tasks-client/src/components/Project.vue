@@ -27,7 +27,7 @@
 
       <q-list highlight>
         <q-list-header>Projects</q-list-header>
-        <q-item link v-for="project in findAllProjects" :key="project.id" @click="$router.push({ name: 'list-task' })">
+        <q-item link v-for="project in findAllProjects" :key="project.id" @click="$router.push({ name: 'list-task', params: { project } })">
           <q-item-main :label="project.name" />
           <q-item-side right>
 

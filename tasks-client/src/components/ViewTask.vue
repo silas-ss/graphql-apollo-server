@@ -23,14 +23,10 @@
       if using subRoutes
     -->
     <div class="layout-padding">
-      <q-btn color="primary" @click="modalCreate = true">Create</q-btn>
+      <strong>Title</strong>: {{ task.title }}<br>
+      <strong>Description</strong>: {{ task.description }}<br>
+      <h5>Worklogs</h5>
 
-      <q-list highlight>
-        <q-list-header>Tasks</q-list-header>
-        <q-item link v-for="task in tasks" :key="task.id" @click="$router.push({ name: 'view-task', params: { task } })">
-          <q-item-main :label="task.title" />
-        </q-item>
-      </q-list>
     </div>
   </q-layout>
 </template>
@@ -53,10 +49,6 @@ import {
   QInput,
   QPopover
 } from 'quasar'
-
-import {
-  TASKS_QUERY
-} from 'src/queries/task'
 
 let self
 
@@ -82,31 +74,16 @@ export default {
   data () {
     self = this
     return {
-      tasks: [],
-      project: {}
+      task: []
     }
   },
 
-  methods: {
-    loadTasks: (projectId) => {
-      self.$apollo.query({
-        query: TASKS_QUERY,
-        variables: {
-          projectId
-        }
-      }).then(({data: { findAllTasks }}) => {
-        self.tasks = findAllTasks
-      })
-    }
-  },
+  methods: {},
 
-  created () {
-    self.findAllTasks = []
-  },
+  created () {},
 
   mounted () {
-    self.project = self.$route.params.project
-    self.loadTasks(self.project.id)
+    self.task = self.$route.params.task
   }
 }
 </script>

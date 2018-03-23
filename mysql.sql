@@ -1,3 +1,5 @@
+CREATE DATABASE tasks;
+
 CREATE TABLE `tasks` (
   `id` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,

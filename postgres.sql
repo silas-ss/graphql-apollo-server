@@ -1,3 +1,5 @@
+CREATE DATABASE tasks;
+
 -- Table: public.projects
 
 -- DROP TABLE public.projects;

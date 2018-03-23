@@ -29,6 +29,7 @@ export default new VueRouter({
     { path: '/create', name: 'create-project', component: load('CreateProject') },
     { path: '/edit', name: 'edit-project', component: load('EditProject') },
     { path: '/tasks', name: 'list-task', component: load('Tasks') },
+    { path: '/tasks/view', name: 'view-task', component: load('ViewTask') },
 
     // Always leave this last one
     { path: '*', component: load('Error404') } // Not found
